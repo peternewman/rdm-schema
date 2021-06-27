@@ -3,7 +3,7 @@
   "notes": "E1.37-5",
   "pid": -1,
   "version": 1,
-  "get_request_subdevice_range": [ "root", "subdevices" ],
+  "get_request_subdevice_range": [ "root", "subdevices", "badcast" ],
   "get_request": [
     {
       "name": "pattern_length",
