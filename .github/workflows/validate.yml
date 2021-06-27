@@ -10,7 +10,7 @@ jobs:
       - run: sudo npm install -g ajv-cli
       - run: wget https://json-schema.org/draft/2020-12/schema
       #- run: wget https://json-schema.org/draft/2019-09/schema
-      - run: ajv migrate -s schema
+      - run: ajv migrate -s schema --all-errors --verbose
       - name: Validate JSON
         uses: docker://orrosenblatt/validate-json-action:latest
         env:
