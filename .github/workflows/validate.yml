@@ -7,6 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - run: npm install -g ajv-cli
       - run: wget https://json-schema.org/draft/2020-12/schema
       #- run: wget https://json-schema.org/draft/2019-09/schema
       - run: ajv migrate -s schema
