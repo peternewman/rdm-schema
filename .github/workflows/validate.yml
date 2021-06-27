@@ -1,0 +1,20 @@
+name: Validate JSONs
+
+on: [pull_request]
+
+jobs:
+  verify-json-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: wget https://json-schema.org/draft/2020-12/schema
+      - name: Validate JSON
+        uses: docker://orrosenblatt/validate-json-action:latest
+        env:
+          INPUT_SCHEMA: schema
+          INPUT_JSONS: rdm-schema.json
+      - name: Validate JSON
+        uses: docker://orrosenblatt/validate-json-action:latest
+        env:
+          INPUT_SCHEMA: rdm-schema.json
+          INPUT_JSONS: examples/e1.20/DEVICE_INFO.json
