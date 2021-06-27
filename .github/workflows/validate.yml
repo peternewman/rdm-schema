@@ -7,8 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      #- run: wget https://json-schema.org/draft/2020-12/schema
-      - run: wget https://json-schema.org/draft/2019-09/schema
+      - run: wget https://json-schema.org/draft/2020-12/schema
+      #- run: wget https://json-schema.org/draft/2019-09/schema
+      - run: ajv migrate -s schema
       - name: Validate JSON
         uses: docker://orrosenblatt/validate-json-action:latest
         env:
